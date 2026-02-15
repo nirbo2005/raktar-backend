@@ -9,7 +9,11 @@ async function bootstrap() {
 
   // A CORS már jól be van állítva nálad, ez engedi a telefont és az ngrok-ot is
   app.enableCors({
-    origin: '*',
+    origin: [
+      'https://raktar-frontend.vercel.app', 
+      'https://olahnorbert.hu',
+      'http://localhost:5173' // A helyi teszteléshez
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     preflightContinue: false,
     optionsSuccessStatus: 204,
